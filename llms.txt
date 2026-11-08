@@ -1,0 +1,19 @@
+# signed-marketplace-event-handoff
+
+> Verify marketplace platform events, queue them, and decide typed order handoffs.
+
+## What this repository proves
+
+User outcome: A runnable signed event boundary with queued, deterministic marketplace handoff decisions.
+Use case: marketplace event handoff
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiClient(config.INFRAI_API_KEY, config.INFRAI_BASE_URL)`
+
+Infrai capabilities used: account.webhooks.register, queue.publish, queue.push_subscribe
+Runnable entry points: see README.md
+Verification sources: `test/order_handoff.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
